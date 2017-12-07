@@ -59,8 +59,8 @@ void setup() {
 
 void draw() {
 
-    println(frameRate);
-    println(faceList.size());
+    println("framerate:    " + frameRate);
+    println("num of faces: " + faceList.size());
 
     // if(frameCount%drawFreq == 0) {
     //     background(0, 0, 0);
