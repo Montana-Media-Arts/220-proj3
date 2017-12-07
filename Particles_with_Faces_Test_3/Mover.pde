@@ -14,7 +14,7 @@ class Mover {
     float closeFaceX = 0;
     float closeFaceY = 0;
     int index = -1;
-    float record;
+    float record = 50000;
 
     color col = color(255, 255, 255, 60);
 
@@ -73,15 +73,9 @@ class Mover {
 
     void display() {
         //Controls color of the floaters, 4th number controls opacity
-        pushMatrix();
-        // scale(xScl, yScl);
-        // scale(-1, 1);
-        // translate(-width/xScl, 0);
-        // fill(255,255,255,60);
         fill( col );
         noStroke();
-        ellipse(position.x,position.y,16,16);
-        popMatrix();
+        ellipse(position.x,position.y,20,20);
     }
 
 }

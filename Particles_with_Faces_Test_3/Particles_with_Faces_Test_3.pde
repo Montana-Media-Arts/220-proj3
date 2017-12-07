@@ -20,13 +20,14 @@ Rectangle[] faces;
 int faceCount = 0;
 
 
-Mover[] movers = new Mover[2000];
 
 int vidRez = 20;
 float xScl;
 float yScl;
-int detectFrameFreq = 4;
+int detectFrameFreq = 8;
 boolean dataNew = false;
+int drawFreq = 40;
+Mover[] movers = new Mover[drawFreq*500];
 
 void setup() {
     // size(640,360);
@@ -53,6 +54,7 @@ void setup() {
     detectFaces();
 
 
+    background(0);
 }
 
 void draw() {
@@ -60,7 +62,13 @@ void draw() {
     println(frameRate);
     println(faceList.size());
 
-    background(0, 0, 0);
+    // if(frameCount%drawFreq == 0) {
+    //     background(0, 0, 0);
+    // } else {
+        // background(0, 0, 0, 0);
+        fill(0, 10);
+        rect(0,0,width,height);
+    // }
     noCursor();
 
 
@@ -92,13 +100,17 @@ void draw() {
     for (Face f : faceList) {
         strokeWeight(1);
         //comment out f.display to hide the face tracking box
-        f.display();
+        // f.display();
         f.updateForMovers();
     }
 
+
+    int fnum = frameCount % drawFreq;
     for (int i = 0; i < movers.length; i++) {
         movers[i].update(faceList, dataNew);
-        movers[i].display();
+        if(i%drawFreq == fnum) {
+            movers[i].display();
+        }
     }
 
 

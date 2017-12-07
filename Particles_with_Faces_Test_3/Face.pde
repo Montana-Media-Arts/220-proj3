@@ -20,7 +20,7 @@ class Face {
     boolean delete;
 
     // How long should I live if I have disappeared?
-    int timer = 127;
+    int timer = 60;
 
     // Assign a number to each face
     int id;
