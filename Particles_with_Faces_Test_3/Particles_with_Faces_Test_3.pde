@@ -26,7 +26,7 @@ float xScl;
 float yScl;
 int detectFrameFreq = 8;
 boolean dataNew = false;
-int drawFreq = 40;
+int drawFreq = 100;
 Mover[] movers = new Mover[drawFreq*500];
 
 void setup() {
@@ -66,7 +66,7 @@ void draw() {
     //     background(0, 0, 0);
     // } else {
         // background(0, 0, 0, 0);
-        fill(0, 10);
+        fill(0, 5);
         rect(0,0,width,height);
     // }
     noCursor();

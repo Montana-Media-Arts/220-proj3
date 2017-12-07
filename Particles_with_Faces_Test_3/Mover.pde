@@ -16,7 +16,7 @@ class Mover {
     int index = -1;
     float record = 50000;
 
-    color col = color(255, 255, 255, 60);
+    color col = color(255, 255, 255, 40);
 
     Mover() {
         // Start in the center
