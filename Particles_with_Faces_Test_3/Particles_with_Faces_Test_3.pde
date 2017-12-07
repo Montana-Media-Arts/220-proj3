@@ -26,8 +26,8 @@ float xScl;
 float yScl;
 int detectFrameFreq = 8;
 boolean dataNew = false;
-int drawFreq = 100;
-Mover[] movers = new Mover[drawFreq*500];
+int drawFreq = 4;
+Mover[] movers = new Mover[drawFreq*800];
 
 void setup() {
     // size(640,360);
