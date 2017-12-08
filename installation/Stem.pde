@@ -4,12 +4,15 @@ class Stem {
     int desiredAmp = 0;
     int ampDelta = 1;
     boolean isPlaying = false;
+    float timer = 0;
 
     Stem( SoundFile sf ) {
         soundfile = sf;
 
         soundfile.loop();
         soundfile.amp(amp/100);
+        
+        timer = soundfile.duration();
     }
 
     void play() {
@@ -32,10 +35,17 @@ class Stem {
             } else if ( amp > desiredAmp ) {
                 amp = amp - ampDelta;
             }
-        }
+        }       
 
         // println(amp);
         soundfile.amp(float(amp)/100.0);
+        
+        if( millis()/1000.0 > timer ) {
+          soundfile.stop();
+          soundfile.loop();
+          timer = timer + soundfile.duration();
+        }
+        
     }
 }
 
