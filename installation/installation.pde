@@ -29,15 +29,16 @@ Mover[] movers = new Mover[drawFreq*800];
 
 
 SoundFile soundfile;
-Stem[] stems = new Stem[4];
+Stem[] stems = new Stem[7];
 boolean[] isPlaying = new boolean[stems.length];
 
 
 
 void setup() {
     // size(640,360);
-    fullScreen(1);
-    video = new Capture(this, 16*vidRez, 9*vidRez, "FaceTime HD Camera");
+    fullScreen(0);
+    video = new Capture(this, 16*vidRez, 9*vidRez, "Logitech Camera #2");
+    // video = new Capture(this, 16*vidRez, 9*vidRez, "FaceTime HD Camera");
     opencv = new OpenCV(this, 16*vidRez, 9*vidRez);
     opencv.loadCascade(OpenCV.CASCADE_FRONTALFACE);
 
@@ -60,17 +61,10 @@ void setup() {
 
 
     //Load a soundfile
-    soundfile = new SoundFile(this, "Stem3_bitbugs.aif");
-    stems[0] = new Stem( soundfile );
-
-    soundfile = new SoundFile(this, "Stem4_Icefield.aif");
-    stems[1] = new Stem( soundfile );
-
-    soundfile = new SoundFile(this, "Stem5_bells.aif");
-    stems[2] = new Stem( soundfile );
-
-    soundfile = new SoundFile(this, "Stem6_arp.aif");
-    stems[3] = new Stem( soundfile );
+    for(int i=0; i<=6; i++){
+        soundfile = new SoundFile(this, "Stem"+i+".aif");
+        stems[i] = new Stem( soundfile );
+    }
 
 
     background(0);
@@ -100,26 +94,26 @@ void draw() {
     }
 
 
-    // pushMatrix();
-    // scale(xScl, yScl);
-    // scale(-1, 1);
-    // translate(-width/xScl, 0);
-    // image(video, 0, 0 );
-    // popMatrix();
+     //pushMatrix();
+     //scale(xScl, yScl);
+     //scale(-1, 1);
+     //translate(-width/xScl, 0);
+     //image(video, 0, 0 );
+     //popMatrix();
 
 
-    // Draw all the faces
-    for (int i = 0; i < faces.length; i++) {
-        noFill();
-        strokeWeight(4);
-        //rect(faces[i].x*scl,faces[i].y*scl,faces[i].width*scl,faces[i].height*scl);
-        rect(faces[i].x, faces[i].y, faces[i].width, faces[i].height);
-    }
+    // // Draw all the faces
+    // for (int i = 0; i < faces.length; i++) {
+    //     noFill();
+    //     strokeWeight(4);
+    //     //rect(faces[i].x*scl,faces[i].y*scl,faces[i].width*scl,faces[i].height*scl);
+    //     rect(faces[i].x, faces[i].y, faces[i].width, faces[i].height);
+    // }
 
     for (Face f : faceList) {
         strokeWeight(1);
         //comment out f.display to hide the face tracking box
-        // f.display();
+         //f.display();
         f.updateForMovers();
     }
 
@@ -153,8 +147,8 @@ void draw() {
             stems[d].stop();
         }
     }
-    
-    
+
+
 }
 
 

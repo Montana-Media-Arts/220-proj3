@@ -6,8 +6,8 @@
 
 - Noon @ McGill; Equipment Load Up
     - Help from 2 People
-    1.
-    2.
+    1. Ike
+    2. Marc
 
 - 1pm  @ Roxy;   Load-In to Theater
     - Final is technically 1:10pm-3:10pm
@@ -25,11 +25,12 @@
 
 - 8:30am FRIDAY -- Equipment Return at McGill
     - Help from 2 People
-    1.
-    2.
+    1. Emily
+    2. Ike
 
-- 10AM MONDAY -- Documentation and Demo Video Submitted
-    -
+- 10AM Wednesday -- Documentation and Demo Video Submitted
+    - Garrett
+    - 
 
 
 ## TODO
@@ -38,4 +39,12 @@
 - [ ] --- Equipment Room Checkout Form Submitted
     - By Tuesday
 - [ ] --- Get commitment from 2 students to create professional demo/documentation video
-- [ ] 
+- [ ] --- name and description
+
+
+## Questions
+
+**For Theater**
+- What is lighting like?
+    - Is it adjustable?
+    - Should we bring a light?
