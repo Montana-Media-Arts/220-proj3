@@ -1,0 +1,3 @@
+# CyberSoul
+
+CyberSoul is an interactive art installation piece that focuses on social interaction between people in a shared space.  The purpose is to explore the affect people have on each other.  We explore these principles through the use of a computer vision system to detect faces in the interaction area.  The detection of faces controls a particle system created in Processing, as well as the sound used in the piece.  Particles on screen are drawn to the nearest face, allowing new participants to steal particles from others.  Audio stems play as participants enter the space, creating a more complex sound design meant to invoke an emotional response in the participants.
